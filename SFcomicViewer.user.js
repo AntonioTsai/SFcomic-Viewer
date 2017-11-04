@@ -19,11 +19,10 @@
 (() => {
 	const imgTable = document.querySelector("table tbody");
 	const tempTr = document.createElement("tr");
+	tempTr.appendChild(document.createElement("td"));
 
 	// Remove original image & social media icon
-	imgTable.querySelectorAll('td').forEach((currentValue) => {
-		currentValue.remove();
-	})
+	imgTable.querySelector('tr').remove();
 
 	// generate all images
 	for (var i = 0; i < picCount; i++) {
