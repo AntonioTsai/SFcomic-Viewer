@@ -17,8 +17,8 @@
  * getHost(): Get the current host index
  */
 (() => {
-	var imgTable = document.querySelector("table tbody");
-	var tempTr = document.createElement("tr");
+	const imgTable = document.querySelector("table tbody");
+	const tempTr = document.createElement("tr");
 
 	// remove original image & social media icon
 	var tr = document.querySelector("tr");
