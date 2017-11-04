@@ -19,11 +19,8 @@
 (() => {
 	var imgTable = document.querySelector("table tbody");
 	var tempTr = document.createElement("tr");
-	var imgs = document.createElement("img");
-	tempTr.appendChild(document.createElement("td"));
-	tempTr.children[0].appendChild(imgs);
 
-	// remove original image
+	// remove original image & social media icon
 	var tr = document.querySelector("tr");
 	tr.parentElement.removeChild(tr);
 
