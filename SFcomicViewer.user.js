@@ -30,7 +30,18 @@
 		const img = document.createElement("img");
 
 		img.src = hosts[getHost()] + pic;
+		img.className = "scalable";
 		imgTr.querySelector('td').appendChild(img);
 		imgTable.appendChild(imgTr);
 	});
+
+	// Add CSS style
+	const customStyle = document.createElement('style');
+	let styleSheet;
+
+	document.head.appendChild(customStyle);
+	styleSheet = customStyle.sheet;
+	// Set max-width to a huge number to ensure img show as its original size
+	styleSheet.insertRule("img.scalable { max-width: 100vw; width: auto; -webkit-transition: max-width .5s 2s; transition: transition: max-width .5s 2s; }");
+	styleSheet.insertRule("img.scalable:hover { max-width: 5000px; -webkit-transition: max-width .25s 0s; transition: max-width .25s 0s; }");
 })();
