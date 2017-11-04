@@ -10,30 +10,47 @@
 // @downloadURL  https://github.com/AntonioTsai/SFcomic-Viewer/raw/master/SFcomicViewer.user.js
 // ==/UserScript==
 
-var ADblocker = new function() {
-	for (var a = document.querySelector("iframe"); a; a = document.querySelector("iframe")) {
-		a.parentElement.removeChild(a);
-	}
-};
 
-var Viewer = new function() {
-	var imgtable = document.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
-	var tempTr = document.createElement("tr");
-	var imgs = document.createElement("img");
+/**
+ * picAy: The array store all image's url of the volume
+ * hosts: The array store possible host
+ * getHost(): Get the current host index
+ */
+(() => {
+	const imgTable = document.querySelector("table tbody");
+	const tempTr = document.createElement("tr");
 	tempTr.appendChild(document.createElement("td"));
-	tempTr.children[0].appendChild(imgs);
 
-	// remove original image
-	var tr = document.querySelector("tr");
-	tr.parentElement.removeChild(tr);
-	
-	// generate all images
-	for (var i = 0; i < picCount; i++) {
-		var imgTr = tempTr.cloneNode(true);
-		imgTr.appendChild(document.createElement("img"));
-		imgTr.children[0].children[0].src = picAy[i];
-		imgtable.appendChild(imgTr);
-	}
-	
+	// Remove original image & social media icon
+	imgTable.querySelector('tr').remove();
 
-};
+	// Render all images
+	picAy.map((pic) => {
+		const imgTr = tempTr.cloneNode(true);
+		const img = document.createElement("img");
+
+		img.src = hosts[getHost()] + pic;
+		img.className = "scalable";
+		imgTr.querySelector('td').appendChild(img);
+		imgTable.appendChild(imgTr);
+	});
+
+	// Add CSS style
+	const customStyle = document.createElement('style');
+	let styleSheet;
+
+	document.head.appendChild(customStyle);
+	styleSheet = customStyle.sheet;
+	// Set max-width to a huge number to ensure img show as its original size
+	styleSheet.insertRule(`img.scalable { 
+		max-width: 100vw;
+		width: auto;
+		-webkit-transition: max-width .5s 1s;
+		transition: transition: max-width .5s 1s; 
+	}`);
+	styleSheet.insertRule(`img.scalable:hover { 
+		max-width: 5000px;
+		-webkit-transition: max-width .25s 0.5s;
+		transition: max-width .25s 0.5s; 
+	}`);
+})();
