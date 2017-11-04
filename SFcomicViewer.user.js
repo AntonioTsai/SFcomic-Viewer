@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 
-var Viewer = new function () {
+(() => {
 	var imgtable = document.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
 	var tempTr = document.createElement("tr");
 	var imgs = document.createElement("img");
@@ -31,4 +31,4 @@ var Viewer = new function () {
 	}
 
 
-};
+})();
