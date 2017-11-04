@@ -64,4 +64,10 @@
 	topButtons.forEach((current) => {
 		current.remove();
 	});
+
+	// Select the button at the bottom
+	const bottomButtons = document.querySelectorAll('table + .wrap > .page_turning > :not(:nth-child(n+5)):not(:nth-child(-n+1))');
+	bottomButtons.forEach((current) => {
+		current.remove();
+	});
 })();
