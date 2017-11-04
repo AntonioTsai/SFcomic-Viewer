@@ -17,7 +17,7 @@
  * getHost(): Get the current host index
  */
 (() => {
-	var imgtable = document.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
+	var imgTable = document.querySelector("table tbody");
 	var tempTr = document.createElement("tr");
 	var imgs = document.createElement("img");
 	tempTr.appendChild(document.createElement("td"));
@@ -32,7 +32,7 @@
 		var imgTr = tempTr.cloneNode(true);
 		imgTr.appendChild(document.createElement("img"));
 		imgTr.children[0].children[0].src = picAy[i];
-		imgtable.appendChild(imgTr);
+		imgTable.appendChild(imgTr);
 	}
 
 
