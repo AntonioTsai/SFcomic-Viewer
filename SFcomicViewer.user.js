@@ -4,8 +4,8 @@
 // @version      0.2.1
 // @description  Auto load comic picture.
 // @author       AntonioTsai
-// @match        http://comic.sfacg.com/*
-// @include      http://comic.sfacg.com/*
+// @include      ^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$
+// @include      ^http[s]?\:\/\/manhua.sfacg.com\/mh\/.*\/$
 // @grant        none
 // @downloadURL  https://github.com/AntonioTsai/SFcomic-Viewer/raw/master/SFcomicViewer.user.js
 // ==/UserScript==
