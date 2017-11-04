@@ -10,13 +10,8 @@
 // @downloadURL  https://github.com/AntonioTsai/SFcomic-Viewer/raw/master/SFcomicViewer.user.js
 // ==/UserScript==
 
-var ADblocker = new function() {
-	for (var a = document.querySelector("iframe"); a; a = document.querySelector("iframe")) {
-		a.parentElement.removeChild(a);
-	}
-};
 
-var Viewer = new function() {
+var Viewer = new function () {
 	var imgtable = document.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
 	var tempTr = document.createElement("tr");
 	var imgs = document.createElement("img");
@@ -26,7 +21,7 @@ var Viewer = new function() {
 	// remove original image
 	var tr = document.querySelector("tr");
 	tr.parentElement.removeChild(tr);
-	
+
 	// generate all images
 	for (var i = 0; i < picCount; i++) {
 		var imgTr = tempTr.cloneNode(true);
@@ -34,6 +29,6 @@ var Viewer = new function() {
 		imgTr.children[0].children[0].src = picAy[i];
 		imgtable.appendChild(imgTr);
 	}
-	
+
 
 };
