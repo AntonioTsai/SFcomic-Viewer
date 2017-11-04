@@ -24,13 +24,13 @@
 	// Remove original image & social media icon
 	imgTable.querySelector('tr').remove();
 
-	// generate all images
-	for (var i = 0; i < picCount; i++) {
-		var imgTr = tempTr.cloneNode(true);
-		imgTr.appendChild(document.createElement("img"));
-		imgTr.children[0].children[0].src = picAy[i];
+	// Render all images
+	picAy.map((pic) => {
+		const imgTr = tempTr.cloneNode(true);
+		const img = document.createElement("img");
+
+		img.src = hosts[getHost()] + pic;
+		imgTr.querySelector('td').appendChild(img);
 		imgTable.appendChild(imgTr);
-	}
-
-
+	});
 })();
