@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SFcomic Viewer
 // @namespace    
-// @version      0.2.1
+// @version      1.0.0
 // @description  Auto load comic picture.
 // @author       AntonioTsai
 // @include      /^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$/
