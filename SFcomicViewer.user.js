@@ -11,6 +11,11 @@
 // ==/UserScript==
 
 
+/**
+ * picAy: The array store all image's url of the volume
+ * hosts: The array store possible host
+ * getHost(): Get the current host index
+ */
 (() => {
 	var imgtable = document.getElementsByTagName("table")[0].getElementsByTagName("tbody")[0];
 	var tempTr = document.createElement("tr");
