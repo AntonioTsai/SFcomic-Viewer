@@ -42,6 +42,15 @@
 	document.head.appendChild(customStyle);
 	styleSheet = customStyle.sheet;
 	// Set max-width to a huge number to ensure img show as its original size
-	styleSheet.insertRule("img.scalable { max-width: 100vw; width: auto; -webkit-transition: max-width .5s 2s; transition: transition: max-width .5s 2s; }");
-	styleSheet.insertRule("img.scalable:hover { max-width: 5000px; -webkit-transition: max-width .25s 0s; transition: max-width .25s 0s; }");
+	styleSheet.insertRule(`img.scalable { 
+		max-width: 100vw;
+		width: auto;
+		-webkit-transition: max-width .5s 1s;
+		transition: transition: max-width .5s 1s; 
+	}`);
+	styleSheet.insertRule(`img.scalable:hover { 
+		max-width: 5000px;
+		-webkit-transition: max-width .25s 0.5s;
+		transition: max-width .25s 0.5s; 
+	}`);
 })();
