@@ -58,6 +58,17 @@
 		transition: max-width .25s 0.5s; 
 	}`);
 
+	const topPagination = document.querySelector('.Reduction_top + .wrap > .page_turning');
+
+	// Remove tips
+	topPagination.lastChild.remove();
+
+	//  Center top pagination
+	styleSheet.insertRule(`.Reduction_top + .wrap > .page_turning
+	{
+		text-align: center !important;
+	}`);
+
 	// Remove unnecessary NextPage & PrePage button
 	// Select the button on the top
 	const topButtons = document.querySelectorAll('.Reduction_top + .wrap > .page_turning > :not(:nth-child(n+6)):not(:nth-child(-n+2))');
