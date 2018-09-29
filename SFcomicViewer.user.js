@@ -47,7 +47,7 @@
 
   // Remove unnecessary NextPage & PrePage button
   // Select the button on the top
-  const topButtons = document.querySelectorAll('.Reduction_top + .wrap > .page_turning > :not(:nth-child(n+6)):not(:nth-child(-n+2))')
+  const topButtons = topPagination.querySelectorAll(':not(:nth-child(n+6)):not(:nth-child(-n+2))')
   topButtons.forEach((current) => {
     current.remove()
   })
