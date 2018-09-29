@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SFcomic Viewer
 // @namespace
-// @version      1.1.0
+// @version      1.1.1
 // @description  A userscript for convenient viewing SFcomic.
 // @author       AntonioTsai
 // @include      /^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$/
@@ -34,7 +34,7 @@
 
   // Add CSS style
   let link = document.createElement('link')
-  const cssFileUrl = 'https://raw.githubusercontent.com/AntonioTsai/SFcomic-Viewer/master/README.md'
+  const cssFileUrl = 'https://raw.githubusercontent.com/AntonioTsai/SFcomic-Viewer/master/css/style.css'
   link.setAttribute('rel', 'stylesheet')
   link.setAttribute('type', 'text/css')
   link.setAttribute('href', cssFileUrl)
