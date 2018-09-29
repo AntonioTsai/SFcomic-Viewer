@@ -6,7 +6,7 @@
 // @author       AntonioTsai
 // @include      /^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$/
 // @include      /^http[s]?\:\/\/manhua.sfacg.com\/mh\/.*\/$/
-// @ include      /^http[s]?\:\/\/www.acg456.com\/HTML\/.*\/$/
+// @include      /^http[s]?\:\/\/www.acg456.com\/HTML\/.*\/$/
 // @grant        none
 // @downloadURL  https://github.com/AntonioTsai/SFcomic-Viewer/raw/master/SFcomicViewer.user.js
 // ==/UserScript==
@@ -29,7 +29,7 @@
     const imgTr = tempTr.cloneNode(true)
     const img = document.createElement('img')
 
-    img.src = hosts[getHost()] + pic
+    img.src = pic
     img.className = 'scalable'
     imgTr.querySelector('td').appendChild(img)
     imgTable.appendChild(imgTr)
