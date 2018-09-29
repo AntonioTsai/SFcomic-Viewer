@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         SFcomic Viewer
-// @namespace    
+// @namespace
 // @version      1.0.0
-// @description  Auto load comic picture.
+// @description  A userscript for convenient viewing SFcomic.
 // @author       AntonioTsai
 // @include      /^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$/
 // @include      /^http[s]?\:\/\/manhua.sfacg.com\/mh\/.*\/$/
+// @ include      /^http[s]?\:\/\/www.acg456.com\/HTML\/.*\/$/
 // @grant        none
 // @downloadURL  https://github.com/AntonioTsai/SFcomic-Viewer/raw/master/SFcomicViewer.user.js
 // ==/UserScript==
