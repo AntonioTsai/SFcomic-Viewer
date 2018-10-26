@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SFcomic Viewer
 // @namespace
-// @version      1.1.1
+// @version      1.1.2
 // @description  A userscript for convenient viewing SFcomic.
 // @author       AntonioTsai
 // @include      /^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$/
@@ -11,11 +11,21 @@
 // @downloadURL  https://github.com/AntonioTsai/SFcomic-Viewer/raw/master/SFcomicViewer.user.js
 // ==/UserScript==
 
-/* global picAy */
+/* global picAy hosts getHost */
+/**
+ * {Array} picAy - Array of img urls of current volume
+ * {Array} hosts - Array of possible host
+ * {Function} getHost - Return the index of selected host in string type
+ */
 (() => {
   const imgTable = document.querySelector('table tbody')
   const tempTr = document.createElement('tr')
   tempTr.appendChild(document.createElement('td'))
+
+  let host = ''
+  if (Array.isArray(hosts) & typeof getHost === 'function') {
+    host = hosts[parseInt(getHost())]
+  }
 
   // Remove original image & social media icon
   imgTable.querySelector('tr').remove()
@@ -26,7 +36,7 @@
     const imgTr = tempTr.cloneNode(true)
     const img = document.createElement('img')
 
-    img.src = pic
+    img.src = host + pic
     img.className = 'scalable'
     imgTr.querySelector('td').appendChild(img)
     imgTable.appendChild(imgTr)
