@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SFcomic Viewer
 // @namespace
-// @version      1.1.2
+// @version      1.1.4
 // @description  A userscript for convenient viewing SFcomic.
 // @author       AntonioTsai
 // @include      /^http[s]?\:\/\/comic.sfacg.com\/HTML\/.*\/$/
