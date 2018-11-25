@@ -45,7 +45,7 @@ window.onload = _ => {
 
     // Add CSS style
     let link = document.createElement('link')
-    const cssFileUrl = 'https://antoniotsai.github.io/SFcomic-Viewer/css/style.css'
+    const cssFileUrl = 'https://antoniotsai.github.io/SFcomic-Viewer/files/css/style.css'
     link.setAttribute('rel', 'stylesheet')
     link.setAttribute('type', 'text/css')
     link.setAttribute('href', cssFileUrl)
